@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Сайт рецептов{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'recipes/css/style.css' %}">
+</head>
+<body>
+    <header>
+        <h1><a href="{% url 'home' %}">Сайт рецептов</a></h1>
+        <nav>
+            {% if user.is_authenticated %}
+            {% if user.is_staff %}
+                <a href="{% url 'add_recipe' %}">Добавить рецепт</a>
+                
+            {% endif %}
+                <form action="{% url 'logout' %}" method="post" style="display: inline;">
+                    {% csrf_token %}
+                    <button type="submit" class="link-style">Выйти</button>
+                </form>
+            {% endif %}
+        </nav>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        <p>&copy; 2024 Сайт рецептов</p>
+    </footer>
+</body>
+</html>

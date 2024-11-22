@@ -1,0 +1,127 @@
+@font-face {
+    font-family: 'MyFont';
+    src: url('Ostrovsky-Bold.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#printable {
+    position: absolute;
+    z-index: 15;
+    top: 50%;
+    left: 66%;
+    opacity: 100%;
+    color: aliceblue;
+    font-size: 4.5vw;
+}
+
+html {
+    background-color: black;
+}
+
+body {
+    font-family: 'MyFont'; 
+    width: 40%;  /* Ограничение ширины */
+    background-color: hsl(0, 90%, 62%);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;  /* Чтобы не было горизонтальной прокрутки */
+}
+
+/* Глобальные стили для текста */
+p {
+    color: rgb(180, 200, 160);
+    margin-bottom: 10px;
+    line-height: 1.5em;  /* Межстрочное расстояние */
+    padding-bottom: 5px;  /* Отступ снизу */
+    word-wrap: break-word;  /* Перенос длинных слов */
+    overflow-wrap: break-word;  /* Дополнительное свойство для переноса слов */
+    white-space: normal;  /* Разрешение переноса текста */
+}
+
+/* Границы и стиль для горизонтальных линий */
+hr {
+    line-height: 0px;
+    list-style: circle;
+    outline-color: black;
+}
+
+/* Заголовок */
+h2 {
+    color: rgb(140, 150, 100);
+    font-size: 2em;
+}
+
+/* Заголовок первого уровня */
+h1 {
+    width: 100%;
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+/* Ссылки */
+a, .link-style {
+    color: rgb(133, 60, 22);
+    text-decoration: none;  /* Убираем подчеркивание */
+    background: none; /* Убираем фон */
+    border: none; /* Убираем границы */
+    padding: 0; /* Убираем отступы */
+    font: inherit; /* Наследуем шрифт от родительского элемента */
+    cursor: pointer; /* Делает курсор как у ссылок */
+    text-align: left; /* Для кнопки делает текст выровненным влево */
+}
+
+/* Блоки с рецептами */
+.block {
+    width: 100%;  /* Блок занимает всю ширину контейнера */
+    max-width: 600px;  /* Максимальная ширина блока */
+    background-color: rgb(140, 80, 50);
+    border: 2px solid rgb(80, 40, 20);
+    padding: 20px 10px 20px 30px;
+    margin: 20px auto;  /* Центрируем блок на странице */
+    box-sizing: border-box;
+    border-radius: 10px;  /* Закругленные углы */
+    text-align: left;  /* Выравнивание текста по левому краю */
+    overflow: hidden;  /* Если текст не помещается, скрывать лишнее */
+    display: flex;  /* Используем flexbox для расположения изображения и текста */
+    align-items: center;  /* Вертикальное выравнивание по центру */
+}
+
+
+
+
+/* Стили для модального окна */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);  
+    display: none;  
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.modal-buttons button {
+    margin: 5px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+/* Стили для кнопок */
+#prompt-register {
+    background-color: #a72345; /* Зеленый для регистрации */
+}
+
+#prompt-register:hover {
+    background-color: #218838;
+}

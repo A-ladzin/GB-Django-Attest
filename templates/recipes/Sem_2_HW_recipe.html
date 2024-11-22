@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css\style.css">
+    <title>Рецепт сырников</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <!--LINK JQUERY-->
+<!--PERSONAL SCRIPT JavaScript-->
+
+
+</head>
+<body id = "content">
+
+    
+
+
+    <script>
+        window.addEventListener('resize', function(){
+            document.getElementById('зкштефиду').style.zIndex = '1';
+                }, false);
+        document.body.addEventListener("mouseover", func3,false);
+        document.body.addEventListener("mouseout", func2,false);
+        let hover = false;
+        let i = 40.;
+        
+        let up = true;
+        let getName = null;
+        function sleep(ms) {
+                return new Promise(resolve => setTimeout(resolve, ms));
+            }
+
+        async function func1()
+                {  
+                    while(hover){
+                        document.body.style.width = i+"%";
+                    if (up){
+
+                    if (i < 42){
+                        i+=0.333;
+                    }
+                    else(up = false)
+                }
+                else if (i > 38)
+                {
+                    i-=0.333;
+                }
+                else up = true;
+                
+
+                await sleep(20);
+            }
+                    
+                }
+
+        async function func2()
+                {  
+                    if(hover){
+                        getName = prompt("Как тебя зовут"+(getName!=null?", "+ getName:"")+"?");
+                    }
+                    hover = false;
+
+                    
+
+                }
+
+        async function func3()
+                {  
+                    hover = true;
+                    func1();
+                    document.getElementById("printable").textContent = "Привет"+(getName!=null?", "+getName+"!":"!");
+                }
+        ;
+    </script>
+
+    <h1 style="color:rgb(170, 179, 73);">Сырники из творога</h1>
+    <p> <img src="img\1.webp" alt="Сырники" width="100%"></p>
+    <hr>
+    <h2>Ингредиенты</h2>
+    <ul>
+        <li>Творог - 180 гр</li>
+        <li>Мука - 1 столовая ложка (для теста) и 3 столовой ложки (для обсыпки)</li>
+        <li>Яйцо - 1 шт</li>
+        <li>Сахар - 1 столовая ложка</li>
+        <li>Соль - 0,25 чайной ложки</li>
+        <li>Масло растительное - 1 столовая ложка</li>
+    </ul>
+    <h2>Способ приготовления</h2>
+    <p><em>Сегодня мы с Вами приготовим <b>сырники</b>, которые можно быстро приготовить на завтрак для своей семьи.</em></p> 
+     
+    <ol>
+        <li>Смешиваем в миске ингредиенты: творог, яйцо, сахар и соль.</li>
+        <li>Затем добавляем муку и также все тщательно перемешиваем.</li>
+        <li>Формируем шарики из творожной массы. Чтобы тесто не прилипало к рукам и было удобно катать шарики необходимо смочить руки в воде.</li>
+        <li>Обваливаем сырники в муке (мука должна находиться в отдельной миске)</li>
+        <li>На разогретую сковороду наливаем растительное масло и выкладываем сырники. Жарим на среднем огне с двух сторон до золотистой корочки.</li>
+        <li>Приятного аппетита!</li>
+    </ol>
+    <p><a href="https://www.russianfood.com/recipes/bytype/?fid=305%2F">Другие рецепты сырников</a>    
+    </p>
+    
+    <hr>
+    <p> <img src="img/01.jpg" alt="Сырники с соусом" width="300"></p>
+    <div class="block">Лучше всего сырники подавать теплыми со сметаной и вишневым вареньем.</div>
+</body>
+<div id = "printable">
+
+    </div>
+</html>

@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}{{ recipe.title }}{% endblock %}
+
+{% block content %}
+<h2>{{ recipe.title }}</h2>
+<img class='preview' src="{{ recipe.image.url }}" alt="{{ recipe.title }}" width="100%">
+<p><strong>Автор:</strong> {{ recipe.author.username }}</p>
+<p><strong>Время приготовления:</strong> {{ recipe.cooking_time }} минут</p>
+<p><strong>Описание:</strong> {{ recipe.description }}</p>
+
+<h3>Ингредиенты</h3>
+<p>{{ recipe.ingredients|linebreaksbr }}</p> <!-- Display ingredients with line breaks -->
+
+<h3>Шаги приготовления</h3>
+<p>{{ recipe.steps|linebreaksbr }}</p> <!-- Display steps with line breaks -->
+
+<p><strong>Категории:</strong> 
+    {% for category in recipe.categories.all %}
+        <span class="category-name">{{ category.name }}</span>{% if not forloop.last %}, {% endif %}
+    {% endfor %}
+</p>
+
+{% if user.is_staff %}
+<p>
+    <a href="{% url 'edit_recipe' recipe.id %}">Изменить рецепт</a>
+</p>
+{% endif %}
+
+{% endblock %}

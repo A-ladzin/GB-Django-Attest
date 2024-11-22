@@ -1,0 +1,31 @@
+
+/* Для изображения в блоках */
+.recipe-image {
+    width: 100px;  /* Ограничиваем размер изображения */
+    height: 100px;
+    object-fit: cover;  /* Чтобы изображение заполняло пространство */
+    border-radius: 8px;
+    margin-left: 15px;  /* Отступ справа от картинки */
+}
+
+/* Контейнер для текста рецепта */
+.recipe-details {
+    margin-left: 15px;
+    display: flex;
+    flex-direction: column;  /* Элементы вертикально */
+}
+
+/* Название рецепта */
+.recipe-details h3 {
+    font-size: 1.5em;
+    color: #fff;
+    margin: 0;
+}
+
+/* Описание рецепта */
+.recipe-details p {
+    color: rgb(180, 200, 160);
+    font-size: 0.9em;
+    margin-top: 5px;
+    word-wrap: break-word;
+}

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Главная страница{% endblock %}
+
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'recipes/css/home.css' %}">
+    <h2>Рецепты</h2>
+    
+    <div class="recipe-list">
+        {% for recipe in recipes %}
+        <a href="{% url 'recipe_detail' recipe.id %}">
+            <div class="block">
+                <!-- Изображение рецепта -->
+                <img src="{{ recipe.image.url }}" alt="{{ recipe.title }}" class="recipe-image">
+
+                <!-- Детали рецепта (название и описание) -->
+                <div class="recipe-details">
+                    <h3>{{ recipe.title }}</h3>
+                    <!-- Ссылка на страницу с полным рецептом -->
+                    
+                        <p>{{ recipe.description|truncatewords:20 }}</p>  <!-- Отображаем первые 20 слов -->
+                </div>
+            </div>
+            </a>
+        {% endfor %}
+    </div>
+{% endblock %}

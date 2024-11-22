@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}Редактирование рецепта{% endblock %}
+
+{% block content %}
+  <h2>Редактировать рецепт: {{ recipe.title }}</h2>
+
+  <form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    
+    <!-- Выводим ошибки формы, если они есть -->
+    {% if form.errors %}
+      <div class="errors">
+        {% for field in form %}
+          {% for error in field.errors %}
+            <p>{{ error }}</p>
+          {% endfor %}
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    <!-- Поля формы -->
+    {{ form.as_p }}
+
+    <button type="submit">Сохранить изменения</button>
+  </form>
+
+  <br>
+  <a href="{% url 'recipe_detail' recipe.pk %}">Отменить редактирование и вернуться</a>
+{% endblock %}
