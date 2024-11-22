@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-r$c$t1h=j5u(%^a)0yh7&w6!5wsi-c)pp&xp4ntb*622m%791!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [ '2fc9-94-23-149-154.ngrok-free.app']
+ALLOWED_HOSTS = ['a-ladzin-gb-django-attest-1dec.twc1.net']
 
 
 LOGIN_REDIRECT_URL = '/'
