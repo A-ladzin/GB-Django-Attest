@@ -54,11 +54,7 @@ h2 {
 }
 
 /* Заголовок первого уровня */
-h1 {
-    width: 100%;
-    font-size: 3em;
-    margin-bottom: 10px;
-}
+
 
 /* Ссылки */
 a, .link-style {
@@ -66,10 +62,21 @@ a, .link-style {
     text-decoration: none;  /* Убираем подчеркивание */
     background: none; /* Убираем фон */
     border: none; /* Убираем границы */
-    padding: 0; /* Убираем отступы */
+    margin-right: 15px;  /* Убираем отступы */
     font: inherit; /* Наследуем шрифт от родительского элемента */
     cursor: pointer; /* Делает курсор как у ссылок */
     text-align: left; /* Для кнопки делает текст выровненным влево */
+}
+
+h1 {
+    width: 100%;
+    font-size: 3em;
+    margin-bottom: 10px;
+    color: #aab349;
+}
+
+a:hover, .link-style:hover {
+    color:rgb(140, 65, 30);
 }
 
 /* Блоки с рецептами */

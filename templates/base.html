@@ -9,19 +9,7 @@
 </head>
 <body>
     <header>
-        <h1><a href="{% url 'index' %}">Сайт рецептов</a></h1>
-        <nav>
-            {% if user.is_authenticated %}
-            {% if user.is_staff %}
-                <a href="{% url 'add_recipe' %}">Добавить рецепт</a>
-                
-            {% endif %}
-                <form action="{% url 'logout' %}" method="post" style="display: inline;">
-                    {% csrf_token %}
-                    <button type="submit" class="link-style">Выйти</button>
-                </form>
-            {% endif %}
-        </nav>
+        <h1><a href="{% url 'index' %}" >Сайт рецептов</a></h1>
     </header>
     <main>
         {% block content %}{% endblock %}

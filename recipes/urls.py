@@ -13,4 +13,6 @@ urlpatterns = [
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
     path('api/check_user/<str:username>/', views.check_user, name='check_user'),
     path('api/authenticate_user/', views.authenticate_user, name='authenticate_user'),
+    path('my_recipes/', views.author_recipes, name='my_recipes'),
+    path('delete/<int:pk>', views.delete_recipe, name='delete_recipe'),
 ]

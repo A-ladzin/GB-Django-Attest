@@ -33,7 +33,6 @@ def get_syrniki(request):
     return render(request, 'hello/Sem_2_HW_recipe.html')
 
 
-@user_passes_test(is_admin)
 @login_required
 def add_recipe(request):
     if request.method == "POST":
@@ -49,7 +48,6 @@ def add_recipe(request):
     return render(request, 'recipes/add_recipe.html', {'form': form})
 
 
-@user_passes_test(is_admin)
 @login_required
 def edit_recipe(request, pk):
     recipe = get_object_or_404(Recipe, pk=pk)
@@ -118,3 +116,15 @@ def authenticate_user(request):
         return JsonResponse({'authenticated': False, 'message': 'Invalid username or password'})
     
 
+@login_required
+def author_recipes(request):
+    recipes = Recipe.objects.filter(author=request.user)  # Фильтруем рецепты по текущему пользователю
+    return render(request, 'recipes/my_recipes.html', {'recipes': recipes})
+
+
+@login_required
+def delete_recipe(request, pk):
+    recipe = get_object_or_404(Recipe, pk=pk)
+    if request.user == recipe.author or request.user.is_superuser:
+        recipe.delete()
+        return redirect('home')  # Возврат на главную страницу

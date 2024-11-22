@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-r$c$t1h=j5u(%^a)0yh7&w6!5wsi-c)pp&xp4ntb*622m%791!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['a-ladzin-gb-django-attest-1dec.twc1.net']
+ALLOWED_HOSTS = ['*']
 
 
 LOGIN_REDIRECT_URL = '/'
@@ -133,5 +133,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://a-ladzin-gb-django-attest-1dec.twc1.net", 
+    "http://*", "https://*", 
 ]
